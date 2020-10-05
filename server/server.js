@@ -3,7 +3,6 @@ const bodyParser=require('body-parser')
 const mongoose=require('mongoose')
 const app=express()
 const bcrtpt =require('bcrypt')
-
 mongoose.Promise=global.Promise
 mongoose.connect('mongodb://localhost:27017/auth',{ useNewUrlParser: true, useUnifiedTopology: true ,useCreateIndex: true})
 const {User} =require('./models/user')
