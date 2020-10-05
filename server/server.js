@@ -4,7 +4,7 @@ const mongoose=require('mongoose')
 const app=express()
 const bcrtpt =require('bcrypt')
 mongoose.Promise=global.Promise
-mongoose.connect('mongodb://localhost:27017/auth',{ useNewUrlParser: true, useUnifiedTopology: true ,useCreateIndex: true})
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/auth',{ useNewUrlParser: true, useUnifiedTopology: true ,useCreateIndex: true})
 const {User} =require('./models/user')
 const cookieParser= require('cookie-parser')
 const {auth}=require('./middleware/auth')
